@@ -1,46 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
-			integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
-			crossorigin="anonymous"
-		/>
-		<link rel="stylesheet" href="css/style.css" />
-		<title>Fake WhatsApp</title>
-	</head>
-	<body>
-		<div class="join-container">
-			<header class="join-header">
-				<h1><i class="fab fa-whatsapp"></i> Fake WhatsApp</h1>
-			</header>
-			<main class="join-main">
-				<form action="chat.html">      <!-- action attribute specifies where to send the form-data when a form is submitted -->
-					<div class="form-control">
-						<label for="username">Username</label>
-						<input
-							type="text"
-							name="username"
-							id="username"
-							placeholder="Enter username..."
-							required
-						/>
-					</div>
-					<div class="form-control">
-						<label for="room">Group</label>
-						<select name="room" id="room">
-							<option value="Informatica industriala">II</option>
-							<option value="Transmisii de date">TD</option>
-							<option value="Sisteme de timp real">STR</option>
-							<option value="Ingineria sistemelor de programare">ISP</option>
-							<option value="Proiectarea algoritmilor">PA</option>
-							<option value="Informatica aplicata">IA</option>
-						</select>
-					</div>
-					<button type="submit" class="btn">Join Group</button>
-				</form>
-			</main>
-		</div>
-	</body>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+      integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Buzzer</title>
+  </head>
+  <body>
+    <div class="join-container">
+      <header class="join-header">
+        <h1><i class="fab fa-forumbee"></i> Buzzer</h1>
+      </header>
+      <main class="join-main">
+        <form action="chat.html">
+          <!-- action attribute specifies where to send the form-data when a form is submitted -->
+          <div class="form-control">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              placeholder="Enter username..."
+              required
+            />
+          </div>
+          <div class="form-control">
+            <label for="room">Group</label>
+            <select name="room" id="room">
+              <option value="Informatica industriala">II</option>
+              <option value="Transmisii de date">TD</option>
+              <option value="Sisteme de timp real">STR</option>
+              <option value="Ingineria sistemelor de programare">ISP</option>
+              <option value="Proiectarea algoritmilor">PA</option>
+              <option value="Informatica aplicata">IA</option>
+            </select>
+          </div>
+          <button type="submit" class="btn">Join Group</button>
+        </form>
+      </main>
+    </div>
+  </body>
 </html>

@@ -6,12 +6,19 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Fake WhatsApp</title>
+    <link rel="stylesheet" href="css/emojionearea.min.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/emojionearea.min.js"></script>
+    <title>Buzzer</title>
   </head>
   <body>
     <div class="chat-container">
       <header class="chat-header">
-        <h1><i class="fab fa-whatsapp"></i> Fake WhatsApp</h1>
+        <h1><i class="fab fa-forumbee"></i> Buzzer</h1>
         <a id="leave-btn" class="btn">Leave Group</a>
       </header>
       <main class="chat-main">
@@ -27,6 +34,7 @@
         <form id="chat-form">
           <input
             id="msg"
+            style="display: none"
             type="text"
             placeholder="Enter Message"
             required
@@ -37,13 +45,18 @@
       </div>
     </div>
 
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"  
-    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"></script>
 
     <!-- librarie care permite preluarea atributelor query din URL -->
-    
+
     <script src="/socket.io/socket.io.js"></script>
     <script src="js/main.js"></script>
+
+    <!--Scriptul de mai jos permite functionarea emoji-urilor-->
+    <script>
+      $(document).ready(function () {
+        $("#msg").emojioneArea({});
+      });
+    </script>
   </body>
 </html>
