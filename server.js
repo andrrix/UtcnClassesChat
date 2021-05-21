@@ -2,6 +2,7 @@ const path = require("path");
 const http = require("http");
 const express = require("express");
 const socketio = require("socket.io");
+const Datastore = require('nedb');
 const formatMessage = require("./utils/messages");
 const {
   userJoin,
@@ -13,6 +14,14 @@ const {
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
+
+const database = new Datastore('database.db');
+database.loadDatabase();
+
+//database.insert({name:"Georgiana"});
+//database.insert({name:"Andreea"});
+//database.insert({name:"Diana"});
+//database.insert({name:"Paul"});
 
 // Set static folder
 app.use(express.static(path.join(__dirname, "public")));
@@ -73,3 +82,4 @@ io.on("connection", (socket) => {
 const PORT = process.env.PORT || 3000;
 
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
