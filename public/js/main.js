@@ -31,6 +31,14 @@ socket.on("message", (message) => {
   chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll down la fiecare mesaj trimis
 });
 
+socket.on("messageSend", (message) => {
+  console.log(message);
+  outputMessage1(message);
+
+  // Scroll down
+  chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll down la fiecare mesaj trimis
+});
+
 // Message submit
 chatForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -58,6 +66,21 @@ chatForm.addEventListener("submit", (e) => {
 function outputMessage(message) {
   const div = document.createElement("div");
   div.classList.add("message");
+  const p = document.createElement("p");
+  p.classList.add("meta");
+  p.innerText = message.username;
+  p.innerHTML += `<span>${message.time}</span>`;
+  div.appendChild(p);
+  const para = document.createElement("p"); // se creaza un paragraf pentru fiecare mesaj trimis
+  para.classList.add("text");
+  para.innerText = message.text; // se paseaza textul in paragraf
+  div.appendChild(para);
+  document.querySelector(".chat-messages").appendChild(div);
+}
+
+function outputMessage1(message) {
+  const div = document.createElement("div");
+  div.classList.add("messageSend");
   const p = document.createElement("p");
   p.classList.add("meta");
   p.innerText = message.username;

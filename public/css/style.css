@@ -118,14 +118,27 @@ a {
 }
 
 .chat-messages .message {
-	padding: 10px;
+	padding: 15px;
 	margin-bottom: 15px;
+	background-color: var(--light-color);
+	border-radius: 5px;
+	width: max-content;
+	overflow-wrap: break-word;
+}
+
+.chat-messages .messageSend {
+	padding: 15px;
+	text-align: right;
+	margin-bottom: 15px;
+	margin-right: 5px;
+	margin-left: auto;
+	width: max-content;
 	background-color: var(--light-color);
 	border-radius: 5px;
 	overflow-wrap: break-word;
 }
 
-.chat-messages .message .meta {
+ .meta {
 	font-size: 15px;
 	font-weight: bold;
 	color: var(--dark-color-b);
@@ -133,7 +146,7 @@ a {
 	margin-bottom: 7px;
 }
 
-.chat-messages .message .meta span {
+.meta span {
 	color: #777;
 }
 

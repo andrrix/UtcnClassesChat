@@ -95,7 +95,8 @@ io.on("connection", (socket) => {
   socket.on("chatMessage", (msg) => {
     const user = getCurrentUser(socket.id); // retine user-ul care a trimis mesajul
 
-    io.to(user.room).emit("message", formatMessage(user.username, msg)); // emite mesajul primit tuturor clientilor
+    socket.broadcast.to(user.room).emit("message", formatMessage(user.username, msg)); // emite mesajul primit tuturor clientilor
+    socket.emit("messageSend",formatMessage(user.username, msg));
   });
 
   // Runs when client disconnects
