@@ -24,7 +24,24 @@
               placeholder="Enter username..."
               required
             />
-          <button class="btn">Register</button>
+        </form>
+        <form id="add_user">
+          <button type="submit" class="btn">Add User</button>
+        </form>
+        <form id="delete_user">
+          <button type="submit" class="btn">Delete User</button>
+        </form>
+        <form id="update_user">
+          <label for="changeUser">Username to be changed :</label>
+            <input
+              id="changeusr"
+              type="text"
+              placeholder="Enter username..."
+              required
+            />
+        </form>
+        <form id="update-user">
+          <button type="submit" class="btn">Update User</button>
         </form>
         <form action="index.html">
           <button type="submit" class="btn">Back</button>
@@ -34,7 +51,7 @@
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"></script>
-    <script src = "js/register.js"></script>
+    <script src = "js/manage.js"></script>
 
   </body>
 </html>

@@ -50,6 +50,22 @@ a {
 	margin-right: 15px;
 }
 
+#user_update
+{
+	margin-top: 10px;
+}
+
+.btn2{
+	cursor: pointer;
+	margin-top: 10px;
+	padding: 5px 15px;
+	background: var(--light-color);
+	color: var(--dark-color-a);
+	border: 0;
+	font-size: 15px;
+	margin-right: 15px;
+}
+
 /* Chat Page */
 
 .chat-container {

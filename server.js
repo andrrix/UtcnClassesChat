@@ -31,9 +31,18 @@ const botName = "Buzzer Bot ";
 
 // Run when client connects
 io.on("connection", (socket) => {
-  socket.on("userRegister", (usr) => {
+  socket.on("add-user", (usr) => {
     database.insert({name:usr});
   })
+
+  socket.on("delete-user", (usr) => {
+    database.remove({name:usr});
+  })
+
+  socket.on("update-user", ({oldUser, newUser}) => {
+    database.update({name:oldUser},{name:newUser});
+  })
+
   socket.on("joinRoom", ({ username, room }) => {
     database.findOne({ name: username }, function (err, doc) {
       if (doc != null) {
