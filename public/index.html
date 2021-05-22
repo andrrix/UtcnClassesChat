@@ -9,6 +9,7 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <title>Buzzer</title>
+
   </head>
   <body>
     <div class="join-container">
@@ -23,6 +24,7 @@
             <label for="username">Username</label>
             <input
               type="text"
+              name="username"
               id="username"
               placeholder="Enter username..."
               required
@@ -41,7 +43,15 @@
           </div>
           <button type="submit" class="btn">Join Group</button>
         </form>
+        <form action="register.html">
+          <button type="submit" class="btn">Register</button>
+        </form>
       </main>
     </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"></script>
+    <script src = "js/main.js"></script>
+
   </body>
 </html>

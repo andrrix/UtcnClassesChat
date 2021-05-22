@@ -2,6 +2,8 @@ const chatForm = document.getElementById("chat-form");
 const chatMessages = document.querySelector(".chat-messages");
 const roomName = document.getElementById("room-name");
 const userList = document.getElementById("users");
+const newuser = document.getElementById("user_register");
+
 
 // Get username and room from URL
 const { username, room } = Qs.parse(location.search, {
@@ -12,8 +14,7 @@ const { username, room } = Qs.parse(location.search, {
 const socket = io();
 
 // Join chatroom
-if(username=="Georgiana")
-  socket.emit("joinRoom", { username, room });
+socket.emit("joinRoom", { username, room });
 
 // Get room and users
 socket.on("roomUsers", ({ room, users }) => {
@@ -92,3 +93,4 @@ document.getElementById("leave-btn").addEventListener("click", () => {
   } else {
   }
 });
+
