@@ -6,6 +6,7 @@ const Datastore = require("nedb");
 const formatMessage = require("./utils/messages");
 const {
   userJoin,
+  getUser,
   getCurrentUser,
   userLeave,
   getRoomUsers,
@@ -27,12 +28,21 @@ database.loadDatabase();
 // Set static folder
 app.use(express.static(path.join(__dirname, "public")));
 
-const botName = "Buzzer Bot ";
+const botName = "UTCN Bot ";
+
 
 // Run when client connects
 io.on("connection", (socket) => {
   socket.on("add-user", (usr) => {
+    const userList= database.getAllData();
+    console.log(userList);
+    const existUser= userList.find((user) => user.name === usr);
+    if(existUser == undefined){
     database.insert({name:usr});
+  }
+    else {
+     console.log("User already exist")
+    }
   })
 
   socket.on("delete-user", (usr) => {
@@ -44,14 +54,24 @@ io.on("connection", (socket) => {
   })
 
   socket.on("joinRoom", ({ username, room }) => {
-    database.findOne({ name: username }, function (err, doc) {
+  
+    const userList= database.getAllData();
+    console.log(userList);
+    const existUser= userList.find((user) => user.name === username);
+    console.log(existUser);
+    if(existUser == undefined)
+   { console.log("User doesn't exist");
+   socket.emit("message", formatMessage(botName, "No User"))
+  }
+  else
+  {    database.findOne({ name: username }, function (err, doc) {
       if (doc != null) {
         const user = userJoin(socket.id, username, room);
 
         socket.join(user.room);
 
         // Welcome current user
-        socket.emit("message", formatMessage(botName, "Welcome to Buzzer!")); // trimite mesajul la client
+        socket.emit("message", formatMessage(botName, "Welcome to Chat UTCN!")); // trimite mesajul la client
 
         // Broadcast when a user connects
         socket.broadcast // Mesajul este emis tuturor celorlalti participanti
@@ -89,6 +109,7 @@ io.on("connection", (socket) => {
         });
       }
     });
+  }
   });
 
   // Listen for chatMessage

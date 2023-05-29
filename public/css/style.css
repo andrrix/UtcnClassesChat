@@ -12,12 +12,13 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	width: 100%;
 }
 
 body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
-	background-image: url("bees.jpg");
+	background-image: url("technical-drawing-black-background-mechanical-engineering-drawing-130771792.jpg");
 	margin: 20px;
 }
 
@@ -33,8 +34,8 @@ a {
 	cursor: pointer;
 	height: 33px;
 	padding: 5px 15px;
-	background: var(--light-color);
-	color: var(--dark-color-a);
+	background: white;
+	color: black;
 	border: 0;
 	font-size: 12px;
 	margin-left: 10px;
@@ -43,11 +44,12 @@ a {
 .btn {
 	cursor: pointer;
 	padding: 5px 15px;
-	background: var(--light-color);
-	color: var(--dark-color-a);
+	background: white;
+	color: black;
 	border: 0;
 	font-size: 15px;
 	margin-right: 15px;
+	border-radius: 15px;
 }
 
 #user_update
@@ -68,6 +70,9 @@ a {
 
 /* Chat Page */
 
+#update_user label{
+	margin-top: 10px;
+}
 .chat-container {
 	max-width: 1300px;
 	background: #fff;
@@ -76,7 +81,8 @@ a {
 }
 
 .chat-header {
-	background: var(--dark-color-a);
+	padding: 10px;
+	background: black;
 	color: rgb(255, 255, 255);
 	display: flex;
 	align-items: center;
@@ -90,7 +96,7 @@ a {
 }
 
 .chat-sidebar {
-	background: var(--dark-color-b);
+	background: lightgray;
 	color: rgb(255, 255, 255);
 	padding: 20px 20px 60px;
 	overflow-y: scroll;
@@ -141,7 +147,7 @@ a {
  .meta {
 	font-size: 15px;
 	font-weight: bold;
-	color: var(--dark-color-b);
+	color: #a72013;
 	opacity: 0.7;
 	margin-bottom: 7px;
 }
@@ -152,7 +158,7 @@ a {
 
 .chat-form-container {
 	padding: 20px 30px;
-	background-color: var(--dark-color-a);
+	background-color: #a72013;
 }
 
 .chat-form-container form {
@@ -176,14 +182,14 @@ a {
 .join-header {
 	text-align: center;
 	padding: 10px;
-	background: var(--dark-color-a);
+	background: black;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 }
 
 .join-main {
 	padding: 30px 40px;
-	background: var(--dark-color-b);
+	background: #a72013;
 }
 
 .join-main p {
@@ -216,6 +222,12 @@ a {
 .join-main .btn {
 	margin-top: 20px;
 	width: 100%;
+}
+
+#leave-btn{
+	text-align: center;
+	width: 50%;
+	float: right;
 }
 
 @media (max-width: 700px) {
